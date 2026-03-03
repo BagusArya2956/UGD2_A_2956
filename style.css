@@ -1,0 +1,528 @@
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ================= BACKGROUND DIAGONAL ================= */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        #ffffff 0%,
+        #ffffff 40%,
+        #1f1515 40%,
+        #1f1515 60%,
+        #1f1515 60%,
+        #1f1515 100%
+    );
+    z-index: -1;
+}
+
+/* ================= HEADER ================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+}
+
+.logo {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 30px;
+    color: white;
+    font-weight: 500;
+}
+
+.contact-btn {
+    background: white;
+    color: black !important;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* ================= HERO (DIPAKAI SEMUA HALAMAN) ================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    height: 80vh;
+}
+
+/* ================= LEFT SIDE ================= */
+.left {
+    width: 45%;
+}
+
+.left h1 {
+    font-size: 65px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.intro {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.job {
+    margin-top: 20px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ================= SOCIAL ================= */
+.social {
+    margin-top: 30px;
+}
+
+.social a {
+    display: inline-block;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-right: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* ================= RIGHT SIDE ================= */
+.right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right img {
+    width: 380px;
+    border-radius: 20px;
+}
+
+/* ================= ABOUT CARD ================= */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: white;
+    width: 400px;
+}
+
+.glass-card h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.glass-card p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .right img {
+        margin-top: 30px;
+        width: 250px;
+    }
+
+    .glass-card {
+        width: 90%;
+        margin-top: 30px;
+    }
+}
+/* ================= ABOUT PAGE ================= */
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    height: 80vh;
+}
+
+.about-left {
+    width: 45%;
+}
+
+.about-left h1 {
+    font-size: 55px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.about-left p {
+    max-width: 400px;
+    line-height: 1.6;
+    color: #1a1a1a;
+}
+
+.about-right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: white;
+    width: 420px;
+}
+
+.glass-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.glass-card p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* ================= SKILLS PAGE  ================= */
+
+.skills-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    min-height: 100vh; 
+    box-sizing: border-box;
+}
+
+.skills-left {
+    width: 40%;
+}
+
+.skills-left h1 {
+    font-size: 55px; 
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.skills-left p {
+    font-size: 16px;
+    max-width: 400px;
+    line-height: 1.6;
+    color: #1a1a1a;
+}
+
+.skills-right {
+    width: 50%;
+    padding: 40px 0;
+}
+
+.skills-right h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* GRID SKILL */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.skill-item {
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 16px;
+    font-weight: bold;
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+
+    /* Pengaturan Ikon & Teks */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+}
+
+/* Ukuran Ikon */
+.skill-item i {
+    font-size: 32px; 
+    display: block;
+}
+
+.skill-item span {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+.skill-item:hover i {
+    color: #000000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .skill-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .skills-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 20px;
+        height: auto;
+    }
+
+    .skills-left,
+    .skills-right {
+        width: 100%;
+    }
+
+    .skills-left p {
+        margin: 0 auto 40px auto;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================= PORTFOLIO PAGE ================= */
+.portfolio-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    padding: 100px 80px 50px 80px; 
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+.portfolio-left {
+    width: 40%;
+    padding-top: 20px;
+}
+
+.portfolio-left h1 {
+    font-size: 55px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #000; 
+}
+
+.portfolio-left p {
+    font-size: 16px; 
+    max-width: 400px;
+    line-height: 1.6;
+    color: #1a1a1a;
+}
+
+
+.portfolio-right {
+    width: 50%;
+    height: 100%; 
+    overflow-y: auto; 
+    padding-right: 15px;
+    padding-bottom: 100px; 
+}
+
+.portfolio-right h2 {
+    font-size: 32px; 
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* GRID PROJECT */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* GLASS CARD */
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 24px; 
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.project-card p {
+    font-size: 14px; 
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* BUTTONS */
+.project-buttons a {
+    display: inline-block;
+    padding: 8px 18px;
+    margin: 5px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    border-radius: 25px;
+    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+/* SCROLLBAR STYLE */
+.portfolio-right::-webkit-scrollbar {
+    width: 8px;
+}
+
+.portfolio-right::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.portfolio-right::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+/* ================= CONTACT PAGE ================= */
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    height: 80vh;
+}
+
+.contact-left {
+    width: 40%;
+}
+
+.contact-left h1 {
+    font-size: 55px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.contact-left p {
+    max-width: 400px;
+    line-height: 1.6;
+    color: #1a1a1a;
+}
+
+.contact-right {
+    width: 45%;
+}
+
+.contact-right h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* FORM */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .contact-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%;
+    }
+}
